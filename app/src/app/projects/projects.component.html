@@ -1,0 +1,63 @@
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <h1 class="h3 mb-2 text-gray-800">Mes Projets</h1>
+  <p class="mb-4">
+    Le tableau ci-dessous montre une liste de tous les projets.
+  </p>
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/home/projects">Acceuil</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Mes projets</li>
+    </ol>
+  </nav>
+
+
+  <p class="mb-4">
+    <a routerLink="/home/projects-add" class="btn btn-primary text-white">Ajouter un nouveau</a>
+  </p>
+
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Liste des projets</h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Date de lancement</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr *ngFor=" let p of projects;let j=index; ">
+                <th scope="row">{{j+1}}</th>
+                <td>{{p.project.title}}</td>
+                <td>{{p.project.startDate | date}}</td>
+                <td>
+                  <button class="btn-sm btn btn-info" style="margin-right: 10px;"
+                    [routerLink]="'/home/project-details/'+p.id">Détails</button>
+
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    
+
+</div>

@@ -1,0 +1,70 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Ajouter un nouveau projet</h1>
+    <p class="mb-4">
+        Afin d'ajouter un nouveau projet, veuillez remplir le formulaire ci-dessous
+    </p>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/home/projects">Acceuil</a></li>
+            <li class="breadcrumb-item"><a routerLink="/home/projects">Projects</a></li>
+          
+          <li class="breadcrumb-item active" aria-current="page">Ajouter un nouveau projet</li>
+        </ol>
+      </nav>
+
+
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Ajouter un nouveau projet</h6>
+        </div>
+        <div class="card-body">
+
+            <form [formGroup]="newProjectForm" (ngSubmit)="createProject()" >
+                <div class="form-group">
+                    <label for="">Titre</label>
+                    <input type="text" class="form-control" formControlName="title">
+                </div>
+                <div class="form-group">
+                    <label for="">Déscription</label>
+                    <textarea class="form-control" formControlName="description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="">Date de lancement</label>
+                    <input type="date" class="form-control" formControlName="startDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Type</label>
+                    <select class="form-control" formControlName="type">
+                        <option value="">Choisissez un type</option>
+                        <option value="Plantation">Plantation</option>
+                        <option value="Semis">Semis</option>
+                        
+                    </select>
+                </div>
+
+                <div class="form-group" *ngIf="newProjectForm.value.type != '' ">
+                    <label for="">{{ newProjectForm.value.type == 'Plantation' ? "Nom d'arbre": 'Nom plante'  }}</label>
+                    <input type="text" class="form-control"  formControlName="target" >
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-secondary" type="submit" [disabled]=" ! newProjectForm.valid ">Ajouter</button>
+                </div>
+
+                
+            </form>
+
+
+            
+
+        </div>
+            
+    </div>
+
+</div>

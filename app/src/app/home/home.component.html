@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <div class="row">
+        
+        <div class="col-sm-9" style="padding: 0 !important">
+            <nav class="navbar navbar-light bg-success">
+                <a class="navbar-brand text-white">Smart agricultrue</a>
+                <!--<form class="form-inline">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>-->
+            </nav>
+
+
+            <!-- Side navigation -->
+            <div class="sidenav bg-success">
+                <div class="py-3">
+                    <div class="text-center">
+                        <h3 class="text-white">Smart agricultrue</h3>
+                    </div>
+                
+                    <a routerLink="/home/projects" routerLinkActive="active-menu">Projets</a>
+                    <ul>
+                        <li *ngFor="let p of projects">
+                            <a routerLinkActive="active-menu"  [routerLink]="'/home/project-details/'+p.id" class="text-white" >{{ p.project.title }}</a>
+                        </li>
+                    </ul>
+
+
+
+                    <a routerLinkActive="active-menu" routerLink="/home/rh">Ressources humaines</a>
+                    <a routerLinkActive="active-menu" href="#">Ressources financières</a>
+                    <a routerLinkActive="active-menu"  routerLink="/home/equipments">Gestion des engin</a>
+                    <a routerLinkActive="active-menu" href="#">Analyse</a>
+                    <hr>
+
+                    <div class="pl-2 pr-2">
+                        <button class="btn btn-danger btn-block" (click)="logout()">
+                            Se déconnecter
+                        </button>
+                    </div>
+                    
+                    
+                    
+
+
+                </div>
+            </div>
+            
+            <!-- Page content -->
+            <div class="main">
+                <router-outlet></router-outlet>
+            </div>
+
+            
+        </div>
+
+        <div class="col-sm-3" style="padding: 0 !important">
+            <app-map-component></app-map-component>
+        </div>
+
+
+    </div>
+</div>

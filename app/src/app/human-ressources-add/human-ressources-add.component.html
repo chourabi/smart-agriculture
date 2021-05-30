@@ -1,0 +1,95 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Ajouter un nouveau employée</h1>
+    <p class="mb-4">
+        Afin d'ajouter un nouveau employée, veuillez remplir le formulaire ci-dessous
+    </p>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/home/projects">Acceuil</a></li>
+            <li class="breadcrumb-item"><a routerLink="/home/rh">ressources humaines</a></li>
+          
+          <li class="breadcrumb-item active" aria-current="page">Ajouter un nouveau employée</li>
+        </ol>
+      </nav>
+
+
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Ajouter un nouveau employée</h6>
+        </div>
+        <div class="card-body">
+
+            <form [formGroup]="newEmployee" (ngSubmit)="create()" >
+                <div class="form-group">
+                    
+                </div>
+                <div class="form-group">
+                    <label for="">Nom et prénom</label>
+                    <input type="text" class="form-control" formControlName="fullname">
+                </div>
+                <div class="form-group">
+                    <label for="">Télephone</label>
+                    <input type="tel" class="form-control" formControlName="phone">
+                </div>
+                <div class="form-group">
+                    <label for="">Email( facultatif )</label>
+                    <input type="email" class="form-control" formControlName="email">
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Salaire</label>
+                            <input type="number" class="form-control" formControlName="salary">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Par</label>
+                            <select class="form-control" formControlName="freq">
+                                <option value="">Choisissez une durée</option>
+                                <option value="Heure">Heure</option>
+                                <option value="Mois">Mois</option>
+                                
+                                
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Date d'ambauche</label>
+                    <input type="date" class="form-control" formControlName="dateJoin">
+                </div>
+                
+
+                <div class="form-group">
+                    <label for="">Compétence</label>
+                    <select class="form-control" formControlName="skill">
+                        <option value="">Choisissez une compétence</option>
+                        <option value="Ouvrier">Ouvrier</option>
+                        <option value="Ingenieur agricole">Ingenieur agricole</option>
+                        <option value="Conducteur">Conducteur</option>
+                        
+                        
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-secondary" type="submit" [disabled]=" ! newEmployee.valid ">Ajouter</button>
+                </div>
+
+                
+            </form>
+
+
+            
+
+        </div>
+            
+    </div>
+
+</div>

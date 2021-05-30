@@ -1,0 +1,99 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Détails projet</h1>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/home/projects">Acceuil</a></li>
+            <li class="breadcrumb-item"><a routerLink="/home/projects">Projects</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Détails</li>
+        </ol>
+      </nav>
+
+
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4" *ngIf="project != null">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Géneral</h6>
+        </div>
+        <div class="card-body">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+            <hr>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="">Date de lancement</label>
+                    <input class="form-control" type="date" value="{{project.startDate}}" disabled>
+                </div>
+                <div class="col-sm-4">
+                    <label for="">Type</label>
+                    <input class="form-control" type="text" value="{{project.type}}" disabled>
+                </div>
+                <div class="col-sm-4">
+                    <label for="">Nom sujet</label>
+                    <input class="form-control" type="text" value="{{project.target}}" disabled>
+                </div>
+                
+                
+            </div>
+
+
+
+        </div>
+            
+    </div>
+
+    
+
+
+        <!-- employees -->
+        <div class="card shadow mb-4" >
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Employés concernés</h6>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="affectEmployeeForm" (ngSubmit)="addNewEmployee()" >
+                    <div class="row form">
+                        <div class=" col-sm-6">
+                            <div class="form-group">
+                                <label for="">Employé</label>
+                                <select class="form-control" formControlName="employee_id">
+                                    <option value="">Choisissez un employé</option>
+                                    <option value="{{e.id}}" *ngFor="let e of employees;">{{e.employee.fullname}} / {{e.employee.phone}} </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class=" col-sm-6">
+                            <button type="submit" class="btn btn-secondary  btn-block" style="margin-top: 2rem!important;" [disabled]="! affectEmployeeForm.valid ">Ajouter</button>
+                        </div>
+                    </div>
+
+                </form>
+                
+        
+                <div *ngIf="project != null">
+                    <div class="list-group" *ngIf="project.employees != null">
+                        <a  class="list-group-item list-group-item-action " *ngFor="let e of project.employees">
+                          <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{e.employee.fullname}}</h5>
+                            <button class="btn btn-danger" (click)="deleteEmployee(e.id)">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                          </div>
+                          <p class="mb-1">{{e.employee.phone}}</p>
+                          <small>{{e.employee.email}}</small>
+                        </a>
+                        
+                      </div>
+                </div>
+                  
+                  
+                  
+            </div>
+          </div>
+        
+
+</div>

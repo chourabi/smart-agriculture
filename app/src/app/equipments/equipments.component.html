@@ -1,0 +1,69 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Mes engins</h1>
+    <p class="mb-4">
+        Le tableau ci-dessous montre une liste de tous les engins.
+    </p>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/home/projects">Acceuil</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Mes engin</li>
+        </ol>
+      </nav>
+
+    
+    <p class="mb-4">
+        <a routerLink="/home/equipments-add-e" class="btn btn-primary text-white">Ajouter un nouveau</a>
+    </p>
+    
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Liste des engins</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                    
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Titre</th>
+                        <th scope="col">Date d'ajout</th>
+                        <th scope="col">Prix</th>
+                        <th scope="col">Statut</th>
+                        
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      
+                      <tr *ngFor=" let e of equipments;let j=index; ">
+                        <th scope="row">{{j+1}}</th>
+                        <td>{{e.equipment.title}}</td>
+                        <td>{{e.equipment.dateAdd | date}}</td>
+                        <td>
+
+                          <span *ngIf=" e.equipment.status == 'Location'"> {{(e.equipment.pricePerHour | currency:'TND ')}} / heure </span>
+                          <span *ngIf=" e.equipment.status == 'Propriété'"> {{(e.equipment.price | currency:'TND ') }} </span>
+                        </td>
+                        <td>{{e.equipment.status}}</td>
+                        <td>
+                            <button class="btn-sm btn btn-danger" style="margin-right: 10px;" (click)="deleteEquipment(e.id)" >supprimer</button>
+                            
+                        
+
+                        
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+
+</div>
