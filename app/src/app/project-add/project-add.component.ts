@@ -10,6 +10,16 @@ import { Router } from '@angular/router';
 })
 export class ProjectAddComponent implements OnInit {
 
+  /*
+                  <div class="form-group">
+                    <label for="">Distance interligne</label>
+                    <input type="text" class="form-control" formControlName="interDistance">
+                </div>
+                <div class="form-group">
+                    <label for="">Distance intraligne</label>
+                    <input type="text" class="form-control" formControlName="intraDistance">
+                </div>
+   */
 
   newProjectForm = new FormGroup({
     title: new FormControl('',Validators.required),
@@ -17,7 +27,8 @@ export class ProjectAddComponent implements OnInit {
     startDate: new FormControl('',Validators.required),
     type: new FormControl('',Validators.required),
     target: new FormControl('',Validators.required),
-    
+    superficie: new FormControl('',Validators.required),
+    intraDistance: new FormControl('',Validators.required),
     
     
     

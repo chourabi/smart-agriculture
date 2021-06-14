@@ -1,0 +1,95 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Ajouter une nouvelle transactions</h1>
+    <p class="mb-4">
+        Afin d'ajouter une nouvelle transactions, veuillez remplir le formulaire ci-dessous
+    </p>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/home/projects">Acceuil</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Ressources financières</li>
+          
+          <li class="breadcrumb-item active" aria-current="page">Ajouter une nouvelle transactions</li>
+        </ol>
+      </nav>
+
+
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Ajouter une nouvelle transactionse</h6>
+        </div>
+        <div class="card-body">
+  
+
+            <form [formGroup]="newtransaction" (ngSubmit)="create()" >
+                <div class="form-group">
+                    
+                </div>
+                <div class="form-group">
+                    <label for="">Type</label>
+                    <select  class="form-control" formControlName="title">
+                        <option value="">Choisissez un type</option>
+                        <option value="retrait">Retrait</option>
+                        <option value="revenu">Revenu</option>
+                        
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Montant ( dinar )</label>
+                    <input type="tel" class="form-control" formControlName="amount">
+                </div> 
+
+
+                <div class="row">
+                    <div class="col-sm-6"> 
+
+                        <div class="form-group">
+                            <label for="">Operation</label>
+                            <select class="form-control" formControlName="operation_name">
+                                <option value="">Choisissez une operation</option>
+                                <option value="Irragation">Irragation</option>
+                                <option value="Maintenance">Maintenance</option>
+                                <option value="Récolte">Récolte</option>
+                                <option value="Stock">Stock</option>
+                                
+                                
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Projet</label>
+                            <select class="form-control" formControlName="project_name">
+                                <option value="">Choisissez une durée</option>
+                                <option value="{{p.title}}" *ngFor="let p of projects">{{p.title}}</option> 
+                                
+                                
+                            </select>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="form-group">
+                    <label for="">Déscription</label> 
+                    <textarea rows="3"  class="form-control" formControlName="description"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-secondary" type="submit" [disabled]=" ! newtransaction.valid ">Ajouter</button>
+                </div>
+
+                
+            </form>
+
+
+            
+
+        </div>
+            
+    </div>
+
+</div>

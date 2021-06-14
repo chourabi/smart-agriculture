@@ -1,0 +1,67 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Ressources financières</h1>
+    <p class="mb-4">
+        Le tableau ci-dessous montre une liste de tous les transactions.
+    </p>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/home/projects">Acceuil</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Ressources financières</li>
+        </ol>
+      </nav>
+
+    
+    <p class="mb-4">
+        <a routerLink="/home/financials-add" class="btn btn-primary text-white">nouvelle transaction</a>
+    </p>
+    
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Liste des transactions</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                    
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th> 
+                        <th scope="col">Type</th> 
+                        <th scope="col">Operation</th> 
+                        <th scope="col">Projet</th> 
+                        <th scope="col">Montant</th>
+                        <th scope="col">description</th>
+                         
+                         
+                      </tr>
+                    </thead>
+                    <tbody> 
+
+                        <tr *ngFor="let e of transactions;let j=index;">
+                            <td>{{ j+1 }}</td>
+                            <td>
+                                <span class="badge" [ngClass]=" e.title =='revenu'  ? 'badge-success' : 'badge-danger' " >{{ e.title }}</span>
+                            </td>
+                            <td>{{ e.operation_name }}</td>
+                            <td>{{ e.project_name }}</td>
+                            <td>{{ e.amount }}</td>
+                            <td>{{ e.description }}</td>
+                            
+                            
+                            
+                        </tr>
+                      
+                      
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+
+</div>

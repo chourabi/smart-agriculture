@@ -15,7 +15,8 @@ export class EquipmentsAddComponent implements OnInit {
     price:new FormControl(''),
     pricePerHour:new FormControl(''),
     dateAdd:new FormControl('',Validators.required),
-    status:new FormControl('',Validators.required)
+    status:new FormControl('',Validators.required),
+    //duration:new FormControl('',Validators.required)
     
   })
   constructor( private db:AngularFirestore, private router:Router ) { }

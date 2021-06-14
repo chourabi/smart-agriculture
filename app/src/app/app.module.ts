@@ -28,6 +28,8 @@ import {
   AngularFireUploadTask,
   StorageBucket
 } from "@angular/fire/storage";
+import { FinancialsComponent } from './financials/financials.component';
+import { FinancialsAddComponent } from './financials-add/financials-add.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import {
     HumanRessourcesAddComponent,
     HumanRessourcesDetailsComponent,
     EquipmentsComponent,
-    EquipmentsAddComponent
+    EquipmentsAddComponent,
+    FinancialsComponent,
+    FinancialsAddComponent
   ],
   imports: [
     ChartsModule,

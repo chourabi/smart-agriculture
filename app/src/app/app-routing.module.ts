@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { EquipmentsAddComponent } from './equipments-add/equipments-add.component';
 import { EquipmentsComponent } from './equipments/equipments.component';
+import { FinancialsAddComponent } from './financials-add/financials-add.component';
+import { FinancialsComponent } from './financials/financials.component';
 import { HomeComponent } from './home/home.component';
 import { HumanRessourcesAddComponent } from './human-ressources-add/human-ressources-add.component';
 import { HumanRessourcesDetailsComponent } from './human-ressources-details/human-ressources-details.component';
@@ -19,6 +21,9 @@ const routes: Routes = [
 
   { path:'home' , component:HomeComponent, children:[
     { path:'projects', component:ProjectsComponent },
+    { path:'financials', component:FinancialsComponent },
+    { path:'financials-add', component:FinancialsAddComponent },
+    
     { path:'projects-add', component:ProjectAddComponent },
     { path:'project-details/:id', component:ProjectDetailsComponent },
 

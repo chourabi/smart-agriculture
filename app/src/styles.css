@@ -68,9 +68,18 @@ label{
 }
 
 .bg-login-image{
-    background-image: url(https://climate.copernicus.eu/sites/default/files/styles/hero_image_extra_large_2x/public/2018-07/globalagriculture.jpg?itok=fUmFHs6s);
+    background-image: url(./assets/logo.gif);
     background-position: center;
     background-size: 100% auto;
     min-height: 60vh;
     background-size: cover;
+}
+
+.back-cov{
+  
+  background-image: url(https://climate.copernicus.eu/sites/default/files/styles/hero_image_extra_large_2x/public/2018-07/globalagriculture.jpg?itok=fUmFHs6s);
+  background-position: center;
+  background-size: 100% auto;
+  min-height: 60vh;
+  background-size: cover;
 }

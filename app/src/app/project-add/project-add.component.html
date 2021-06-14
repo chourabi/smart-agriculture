@@ -33,10 +33,7 @@
                     <label for="">Déscription</label>
                     <textarea class="form-control" formControlName="description"></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="">Date de lancement</label>
-                    <input type="date" class="form-control" formControlName="startDate">
-                </div>
+
 
                 <div class="form-group">
                     <label for="">Type</label>
@@ -48,10 +45,45 @@
                     </select>
                 </div>
 
+                
+                
+                
+
                 <div class="form-group" *ngIf="newProjectForm.value.type != '' ">
                     <label for="">{{ newProjectForm.value.type == 'Plantation' ? "Nom d'arbre": 'Nom plante'  }}</label>
                     <input type="text" class="form-control"  formControlName="target" >
                 </div>
+
+                <div class="form-group">
+                    <label for="">Superficie</label>
+                    <input type="text" class="form-control" formControlName="superficie">
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="">Distance interligne</label>
+                    <input type="text" class="form-control" formControlName="interDistance">
+                </div>
+                <div class="form-group">
+                    <label for="">Distance intraligne</label>
+                    <input type="text" class="form-control" formControlName="intraDistance">
+                </div>
+                
+
+
+
+                
+
+                
+
+                
+
+                <div class="form-group">
+                    <label for="">Date de lancement</label>
+                    <input type="date" class="form-control" formControlName="startDate">
+                </div>
+
 
                 <div class="form-group">
                     <button class="btn btn-secondary" type="submit" [disabled]=" ! newProjectForm.valid ">Ajouter</button>
