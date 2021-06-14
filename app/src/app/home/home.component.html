@@ -2,7 +2,8 @@
     <div class="row">
         
         <div class="col-sm-9" style="padding: 0 !important">
-            <nav class="navbar navbar-light bg-success">
+            <nav class="navbar navbar-light bg-success" style="background-color: #8bc34a !important;">
+                
                 <a class="navbar-brand text-white">Smart agricultrue</a>
                 <!--<form class="form-inline">
                   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -12,13 +13,16 @@
 
 
             <!-- Side navigation -->
-            <div class="sidenav bg-success">
+            <div class="sidenav bg-success" style="background-color: #8bc34a !important;" >
                 <div class="py-3">
                     <div class="text-center">
-                        <h3 class="text-white">Smart agricultrue</h3>
+                        
+                        <h3 class="text-white"> <img src="../../assets/logo.gif" width="50px"/> Smart agriculture</h3>
                     </div>
                 
-                    <a routerLink="/home/projects" routerLinkActive="active-menu">Projets</a>
+                    <a routerLink="/home/projects" routerLinkActive="active-menu">
+                        <i class="fas fa-seedling"></i>
+                        Projets</a>
                     <ul>
                         <li *ngFor="let p of projects">
                             <a routerLinkActive="active-menu"  [routerLink]="'/home/project-details/'+p.id" class="text-white" >{{ p.project.title }}</a>
@@ -27,10 +31,18 @@
 
 
 
-                    <a routerLinkActive="active-menu" routerLink="/home/rh">Ressources humaines</a>
-                    <a routerLinkActive="active-menu" routerLink="/home/financials">Ressources financières</a>
-                    <a routerLinkActive="active-menu"  routerLink="/home/equipments">Gestion des engin</a>
-                    <a routerLinkActive="active-menu" target="_blank" href="#">python</a>
+                    <a routerLinkActive="active-menu" routerLink="/home/rh">
+                        <i class="fas fa-users"></i>
+                        Ressources humaines</a>
+                    <a routerLinkActive="active-menu" routerLink="/home/financials">
+                        <i class="fas fa-dollar-sign"></i>
+                        Ressources financières</a>
+                    <a routerLinkActive="active-menu"  routerLink="/home/equipments">
+                        <i class="fas fa-tractor"></i>
+                        Gestion des engin</a>
+                    <a routerLinkActive="active-menu" target="_blank" href="#">
+                        <i class="fas fa-cloud"></i>
+                        Prévision</a>
                     <hr>
 
                     <div class="pl-2 pr-2">
